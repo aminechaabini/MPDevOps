@@ -52,8 +52,8 @@ jobs:
     - name: Analyze code with SonarCloud
       run: |
         sonar-scanner \
-          -Dsonar.projectKey=my-app \
-          -Dsonar.organization=my-organization \
+          -Dsonar.projectKey=aminechaabini_mp-devops \
+          -Dsonar.organization=aminechaabini \
           -Dsonar.sources=src \
           -Dsonar.host.url=https://sonarcloud.io
 
