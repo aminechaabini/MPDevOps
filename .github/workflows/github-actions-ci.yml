@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - master  
-  pull_request:
-    branches:
-      - main 
 
 jobs:
   build:
@@ -49,3 +46,21 @@ jobs:
         image: my-app
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
+    - name: Set up SonarCloud
+      uses: sonarsource/sonarcloud-github-action@v1
+      with:
+        token: ${{ secrets.SONAR_TOKEN }}
+
+    - name: Analyze code with SonarCloud
+      run: |
+        sonar-scanner \
+          -Dsonar.projectKey=my-app \
+          -Dsonar.organization=my-organization \
+          -Dsonar.sources=src \
+          -Dsonar.host.url=https://sonarcloud.io
+
+    - name: Push Docker image
+      run: |
+        docker push my-app
+        
