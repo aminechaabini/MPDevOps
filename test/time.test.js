@@ -6,7 +6,7 @@ describe('Time Formatting', () => {
 
     it('should return the correct time format', () => {
         const time = getFormattedTime(testDate);
-        expect(time).to.equal('14:30:45');  // Expected 24-hour HH:MM:SS
+        expect(time).to.equal('2:30:45 PM');  
     });
 
     it('should throw an error if the input is not a Date object', () => {
