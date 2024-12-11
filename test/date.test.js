@@ -1,5 +1,7 @@
-const { expect } = require('chai');
-const { getFormattedDate } = require('../utils');
+import { expect } from 'chai';
+import { getFormattedDate } from '../utils';
+
+const { expect } = chai;
 
 describe('Date Formatting', () => {
     const testDate = new Date('2023-12-06T14:30:45Z');
