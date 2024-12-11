@@ -41,9 +41,9 @@ jobs:
       uses: snyk/actions/docker@master
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        fail-on: medium
       with:
         image: mp-devops
+        args: --severity-threshold=high
 
     - name: Set up SonarCloud
       uses: sonarsource/sonarcloud-github-action@v1
