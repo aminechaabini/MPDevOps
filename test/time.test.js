@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { getFormattedTime } from '../utils';
+import { getFormattedTime } from '../utils.js';
 
 describe('Time Formatting', () => {
     const testDate = new Date('2023-12-06T14:30:45Z');
