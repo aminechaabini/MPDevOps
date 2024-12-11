@@ -49,11 +49,6 @@ jobs:
       uses: sonarsource/sonarcloud-github-action@v1
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      with:
-        args: >git
-          -Dsonar.projectKey=aminechaabini_mp-devops \
-          -Dsonar.organization=aminechaabini \
-          -Dsonar.host.url=https://sonarcloud.io
 
     - name: Push Docker image
       run: |
