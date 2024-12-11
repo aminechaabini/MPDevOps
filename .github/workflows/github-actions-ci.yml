@@ -52,5 +52,5 @@ jobs:
 
     - name: Push Docker image
       run: |
-        docker push mp-devops
+        docker push feelsee/mp-devops
         
