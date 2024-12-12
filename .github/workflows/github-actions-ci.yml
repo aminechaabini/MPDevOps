@@ -37,13 +37,13 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         
-  #  - name: Run Snyk Docker vulnerability scan
-  #     uses: snyk/actions/docker@master
-  #     env:
-  #       SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-  #     with:
-  #       image: mp-devops
-  #       args: --severity-threshold=high
+   - name: Run Snyk Docker vulnerability scan
+      uses: snyk/actions/docker@master
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      with:
+        image: mp-devops
+        args: --severity-threshold=high
 
     - name: Set up SonarCloud
       uses: sonarsource/sonarqube-scan-action@v2.3.0
